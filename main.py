@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score
 from trees import tree
 from knn import knn
 from nn import nn
-from gradientboost import gboost
+from gradientboost import gboost,lgboost
 from Adaboost import adaboost
 
 from sklearn.neighbors import KNeighborsClassifier
@@ -43,13 +43,16 @@ def main():
     clf_gb = gboost(X,y)
     prediction_gb_submit = clf_gb.predict_proba(X_submit)
 
+    clf_lgb = lgboost(X, y)
+    prediction_lgb_submit = clf_gb.predict_proba(X_submit)
+
     # clf_ab = adaboost(X,y)
     # prediction_ab_submit = clf_ab.predict_proba(X_submit)
 
     # clf_nn = nn(X,y)
     # prediction_nn_submit = clf_nn.predict_proba(X_submit)
 
-    prediction_submit = prediction_rf_submit + prediction_gb_submit
+    prediction_submit = prediction_rf_submit + prediction_gb_submit + prediction_lgb_submit
 
     prediction_submit = np.array([np.argmax(poss == max(poss)) for poss in prediction_submit])
 
