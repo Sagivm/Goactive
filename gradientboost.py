@@ -8,7 +8,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 
 
 def gboost(X:np.ndarray, y:np.ndarray):
-
+    print("Start gboost")
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
     clf = GradientBoostingClassifier(n_estimators=200,random_state=0,learning_rate=0.2)
     clf.fit(X_train,y_train)

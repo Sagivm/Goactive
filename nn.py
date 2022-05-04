@@ -8,7 +8,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.neural_network import MLPClassifier
 
 def nn(X:np.ndarray, y:np.ndarray):
-
+    print("Start ")
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
     clf = MLPClassifier(alpha=1e-5,
                         hidden_layer_sizes=(20,10), random_state=1)
