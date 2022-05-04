@@ -10,13 +10,15 @@ from matplotlib import pyplot
 
 
 
-def tree(X:np.ndarray, y:np.ndarray,best_samples: np.ndarray):
+def tree(X:np.ndarray, y:np.ndarray):
     print("Start tree")
-    X_train, X_test, y_train, y_test, best_train, best_test = train_test_split(X, y, best_samples, test_size=0.3, random_state=2)
-    weights = np.array(list(map(lambda n: 8 if n else 1, best_train)))
-    clf = RandomForestClassifier()
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=2)
+    clf = RandomForestClassifier(n_estimators=400,
+                                 max_features=0.2,
+                                 n_jobs=4,
+                                 random_state=42)
 
-    clf.fit(X_train, y_train,sample_weight=weights)
+    clf.fit(X_train, y_train)
     prediction = clf.predict(X_test)
 
     print("Summery")

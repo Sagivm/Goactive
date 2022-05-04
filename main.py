@@ -7,6 +7,7 @@ from trees import tree
 from knn import knn
 from nn import nn
 from gradientboost import gboost
+from Adaboost import adaboost
 
 from sklearn.neighbors import KNeighborsClassifier
 
@@ -20,6 +21,11 @@ def find_best_samples(X_train, y_train, X_submit):
     return good_samples
 
 
+
+def NormalizeData(data):
+    return (data - np.min(data)) / (np.max(data) - np.min(data))
+
+
 def main():
 
 
@@ -28,22 +34,24 @@ def main():
     ids, X_submit = readTestData()
     print("Finished reading train data")
 
-    best_samples = find_best_samples(X,y,X_submit)
+    # X = NormalizeData(X)
+    # best_samples = find_best_samples(X,y,X_submit)
 
-    clf_rf = tree(X, y, best_samples)
-    # clf_gb = gboost(X,y)
-    clf_nn = nn(X,y)
+    clf_rf = tree(X, y)
+    prediction_rf_submit = clf_rf.predict_proba(X_submit)
 
-    prediction_rf_submit = clf_rf.predict(X_submit)
-    prediction_submit = prediction_rf_submit
+    clf_gb = gboost(X,y)
+    prediction_gb_submit = clf_gb.predict_proba(X_submit)
 
-    #prediction_gb_submit = clf_gb.predict(X_submit)
-    #prediction_submit += prediction_gb_submit
+    # clf_ab = adaboost(X,y)
+    # prediction_ab_submit = clf_ab.predict_proba(X_submit)
 
+    # clf_nn = nn(X,y)
     # prediction_nn_submit = clf_nn.predict_proba(X_submit)
-    # prediction_submit += prediction_nn_submit
-    #
-    # prediction_submit = np.array([np.argmax(poss == max(poss)) for poss in prediction_submit])
+
+    prediction_submit = prediction_rf_submit + prediction_gb_submit
+
+    prediction_submit = np.array([np.argmax(poss == max(poss)) for poss in prediction_submit])
 
     result = pd.DataFrame(np.stack((ids, prediction_submit), axis=-1).astype(int),columns=["ID","y_pred"])
     pd.DataFrame.to_csv(result,"pred.csv",columns=result.columns,index=False)
