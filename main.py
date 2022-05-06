@@ -8,7 +8,7 @@ from knn import knn
 from nn import nn
 from gradientboost import gboost,lgboost
 from Adaboost import adaboost
-
+from sklearn.decomposition import PCA,TruncatedSVD
 from sklearn.neighbors import KNeighborsClassifier
 
 
@@ -34,8 +34,16 @@ def main():
     ids, X_submit = readTestData()
     print("Finished reading train data")
 
-    # X = NormalizeData(X)
+    # X transformation
+
+    X = NormalizeData(X)
     # best_samples = find_best_samples(X,y,X_submit)
+    pca = PCA(n_components=200)
+    X = pca.fit_transform(X)
+
+    # svd = TruncatedSVD(n_components=120, random_state=42).fit(X)
+    # svd.transform(X)
+
 
     clf_rf = tree(X, y)
     prediction_rf_submit = clf_rf.predict_proba(X_submit)
