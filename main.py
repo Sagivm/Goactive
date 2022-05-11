@@ -10,7 +10,7 @@ from gradientboost import gboost,lgboost
 from Adaboost import adaboost
 from sklearn.decomposition import PCA,TruncatedSVD
 from sklearn.neighbors import KNeighborsClassifier
-
+from sklearn.naive_bayes import GaussianNB
 
 def find_best_samples(X_train, y_train, X_submit):
     clf = KNeighborsClassifier(n_neighbors=1)
@@ -36,13 +36,15 @@ def main():
 
     # X transformation
 
-    X = NormalizeData(X)
+    # X = NormalizeData(X)
+    # X_submit = NormalizeData(X_submit)
     # best_samples = find_best_samples(X,y,X_submit)
-    pca = PCA(n_components=200)
-    X = pca.fit_transform(X)
+    # pca = PCA(n_components=200)
+    # X = pca.fit_transform(X)
 
     # svd = TruncatedSVD(n_components=120, random_state=42).fit(X)
-    # svd.transform(X)
+    # svd.transform
+
 
 
     clf_rf = tree(X, y)
