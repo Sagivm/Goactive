@@ -19,12 +19,12 @@ def tree(X:np.ndarray, y:np.ndarray):
     models = list()
     for _ in range(0,2):
         for i, (train_index, test_index) in enumerate(kf.split(X, y)):
-            print(f"Iteration {i+1}")
+            print(f"Iteration {i+2}")
             X_train, X_test = X[train_index], X[test_index]
             y_train, y_test = y[train_index], y[test_index]
-            clf = RandomForestClassifier(n_estimators=400,
-                                         max_features=0.2,
-                                         n_jobs=4,
+            clf = RandomForestClassifier(n_estimators=200,
+                                         max_features=0.1,
+                                         n_jobs=6,
                                          random_state=42
                                          )
 

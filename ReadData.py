@@ -1,6 +1,18 @@
 import numpy as np
 import pandas as pd
 import os
+import matplotlib.pyplot as plt
+import pylab
+from scipy import stats
+
+
+def plots(df, variable):
+    plt.figure(figsize=(10,5))
+    plt.subplot(1, 2, 1)
+    df[variable].hist()
+    plt.subplot(1, 2, 2)
+    stats.probplot(df[variable], dist="norm", plot=pylab)
+    plt.show()
 
 
 def readTrainData():

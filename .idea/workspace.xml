@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d70ed792-858a-4fe2-bbbc-8ce6635861a9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReadData.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReadData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Runs.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Runs.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradientboost.py" beforeDir="false" afterPath="$PROJECT_DIR$/gradientboost.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -21,8 +22,8 @@
       <file leaf-file-name="gradientboost.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gradientboost.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+            <state relative-caret-position="160">
+              <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -33,19 +34,31 @@
       <file leaf-file-name="_gb.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python39/Lib/site-packages/sklearn/ensemble/_gb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
+            <state relative-caret-position="20860">
               <caret line="1077" column="8" selection-start-line="1077" selection-start-column="8" selection-end-line="1077" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="72" column="10" lean-forward="true" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+            <state relative-caret-position="238">
+              <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadData.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ReadData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,7 +67,7 @@
       <file leaf-file-name="naive_bayes.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python39/Lib/site-packages/sklearn/naive_bayes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3260">
+            <state relative-caret-position="348">
               <caret line="180" column="8" selection-start-line="180" selection-start-column="8" selection-end-line="180" selection-end-column="8" />
             </state>
           </provider>
@@ -72,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trees.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="trees.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trees.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="20" column="70" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
+            <state relative-caret-position="358">
+              <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -121,26 +134,28 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Data/ReadData.py" />
-        <option value="$PROJECT_DIR$/ReadData.py" />
         <option value="$PROJECT_DIR$/knn.py" />
         <option value="$PROJECT_DIR$/nn.py" />
         <option value="$PROJECT_DIR$/Adaboost.py" />
-        <option value="$PROJECT_DIR$/trees.py" />
-        <option value="$PROJECT_DIR$/gradientboost.py" />
+        <option value="$PROJECT_DIR$/ReadData.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/gradientboost.py" />
+        <option value="$PROJECT_DIR$/trees.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="917" />
+    <option name="y" value="187" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,7 +167,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -250,13 +264,13 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32905984" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36894587" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32853025" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36467236" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32763532" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09980172" />
       <window_info anchor="bottom" id="Statistic" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3931624" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39173788" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="ExcelReader" order="7" weight="0.32905984" />
@@ -289,83 +303,88 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/main.py</url>
           <line>18</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/main.py</url>
           <line>20</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/gradientboost.py</url>
           <line>34</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/gradientboost.py</url>
           <line>35</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
-          <line>49</line>
-          <option name="timeStamp" value="46" />
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="47" />
+      <option name="time" value="51" />
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="X[:,1046]" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>np.bincount(y.astype(int))</expression-string>
+        <expression-string>X[:,1046]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.bincount(int(y))</expression-string>
+        <expression-string>data.nunique()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.where(y==1,y,None)</expression-string>
+        <expression-string>data.nunique(axis=-1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.where(y=1,y,y)</expression-string>
+        <expression-string>data.nunique(axis=1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.bincount(y=1)</expression-string>
+        <expression-string>X_full.to</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.bincount(y)</expression-string>
+        <expression-string>np.corrcoef(X_full)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>top_model</expression-string>
+        <expression-string>np.vstack((X,X_submit))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.where(good_samples[0] &lt; 0.5 , good_samples[1],None)</expression-string>
+        <expression-string>X+X_submit</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.where(good_samples[0] &lt; 60 , good_samples[1],None)</expression-string>
+        <expression-string>np.corrcoef(X)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.intersect1d(X,X_submit)</expression-string>
+        <expression-string>np.corrcoef</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -644,13 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ReadData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -731,20 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python39/Lib/site-packages/sklearn/naive_bayes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3260">
-          <caret line="180" column="8" selection-start-line="180" selection-start-column="8" selection-end-line="180" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python39/Lib/site-packages/sklearn/ensemble/_forest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22940">
-          <caret line="1170" column="17" selection-start-line="1170" selection-start-column="17" selection-end-line="1170" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Adaboost.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -755,37 +753,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trees.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="20" column="70" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python39/Lib/site-packages/sklearn/ensemble/_gb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
+        <state relative-caret-position="20860">
           <caret line="1077" column="8" selection-start-line="1077" selection-start-column="8" selection-end-line="1077" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gradientboost.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python39/Lib/site-packages/sklearn/ensemble/_forest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+        <state relative-caret-position="22940">
+          <caret line="1170" column="17" selection-start-line="1170" selection-start-column="17" selection-end-line="1170" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReadData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python39/Lib/site-packages/sklearn/naive_bayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="180" column="8" selection-start-line="180" selection-start-column="8" selection-end-line="180" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="72" column="10" lean-forward="true" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+        <state relative-caret-position="238">
+          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradientboost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trees.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

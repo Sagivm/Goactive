@@ -21,11 +21,11 @@ def gboost(X:np.ndarray, y:np.ndarray):
             X_train, X_test = X[train_index], X[test_index]
             y_train, y_test = y[train_index], y[test_index]
 
-            clf = GradientBoostingClassifier(n_estimators=250,
-                                             max_depth=10,
-                                             max_features=0.2,
-                                             learning_rate=0.15,
-                                             random_state=42)
+            clf = GradientBoostingClassifier(n_estimators=150,
+                                                 max_depth=6,
+                                                 max_features=0.2,
+                                                 learning_rate=0.15,
+                                                 random_state=42)
             clf.fit(X_train, y_train)
             prediction = clf.predict(X_test)
             acc = accuracy_score(y_test, prediction)

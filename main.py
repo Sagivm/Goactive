@@ -35,15 +35,19 @@ def main():
     print("Finished reading train data")
 
     # X transformation
+    X_full = np.vstack((X, X_submit))
+    X = X + 1
+    X_submit = X_submit + 1
+    X_full = NormalizeData(X_full)
+    X_full = X_full + 1
+    columns = X.shape[1]
 
-    # X = NormalizeData(X)
-    # X_submit = NormalizeData(X_submit)
-    # best_samples = find_best_samples(X,y,X_submit)
-    # pca = PCA(n_components=200)
-    # X = pca.fit_transform(X)
+    for i in range(columns):
+        np.append(X_full,np.log(X_full[:,i]))
+        np.append(X_full, np.sqrt(X_full[:, i]))
 
-    # svd = TruncatedSVD(n_components=120, random_state=42).fit(X)
-    # svd.transform
+    X = X_full[:15000,:]
+    X_submit = X_full[15000:, :]
 
 
 
@@ -62,7 +66,7 @@ def main():
     # clf_nn = nn(X,y)
     # prediction_nn_submit = clf_nn.predict_proba(X_submit)
 
-    prediction_submit = prediction_rf_submit + prediction_gb_submit + prediction_lgb_submit
+    prediction_submit = prediction_rf_submit*0.4 + prediction_gb_submit*0.4 + prediction_lgb_submit*0.2
 
     prediction_submit = np.array([np.argmax(poss == max(poss)) for poss in prediction_submit])
 
