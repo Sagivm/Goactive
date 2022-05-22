@@ -3,9 +3,9 @@ import numpy as np
 from ReadData import *
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, confusion_matrix
 from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.model_selection import StratifiedKFold,KFold
+from sklearn.model_selection import StratifiedKFold,KFold,RepeatedStratifiedKFold
 from lightgbm import LGBMClassifier
 from operator import itemgetter
 
@@ -13,9 +13,10 @@ from operator import itemgetter
 
 def gboost(X:np.ndarray, y:np.ndarray):
     print("Start gboost")
-    kf = StratifiedKFold(5, shuffle=True, random_state=42)
+    kf =  RepeatedStratifiedKFold(n_splits=8, n_repeats=3)
     models = list()
-    for _ in range(0,2):
+    scores = list()
+    for _ in range(0,1):
         for i, (train_index, test_index) in enumerate(kf.split(X, y)):
             print(f"Iteration {i+1}")
             X_train, X_test = X[train_index], X[test_index]
@@ -29,11 +30,21 @@ def gboost(X:np.ndarray, y:np.ndarray):
             clf.fit(X_train, y_train)
             prediction = clf.predict(X_test)
             acc = accuracy_score(y_test, prediction)
-            models.append((clf, acc))
+            models.append({
+                "model": clf,
+                "scores": confusion_matrix(y_test, prediction).diagonal() / confusion_matrix(y_test, prediction).sum(
+                    axis=1)
+            })
+            scores.append(acc)
+            # models.append({
+            #     "model": clf,
+            #     "acc": acc,
+            #     "scores":
+            #               })
             print("Summery")
             print(f"score: {acc}")
-    top_model = max(models, key=itemgetter(1))[0]
-    return top_model
+    top_model_index = scores.index(max(scores))
+    return list(models[top_model_index].values())
 
 
 
