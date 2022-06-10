@@ -6,6 +6,7 @@ from sklearn.metrics import accuracy_score
 from trees import tree
 from knn import knn
 from nn import nn
+from svm import svm
 from gradientboost import gboost,lgboost
 from Adaboost import adaboost
 from sklearn.decomposition import PCA,TruncatedSVD
@@ -35,9 +36,8 @@ def main():
     print("Finished reading train data")
     #
     # X transformation
+    print("X transformation")
     X_full = np.vstack((X, X_submit))
-    X = X + 1
-    X_submit = X_submit + 1
     X_full = NormalizeData(X_full)
     X_full = X_full + 1
     columns = X.shape[1]
@@ -47,15 +47,20 @@ def main():
 
     X = X_full[:15000,:]
     X_submit = X_full[15000:, :]
+    print("X transformation finished")
+
+    #
+    # clf_svm, rel_svm_acc = svm(X, y)
+    # prediction_svm_submit = clf_svm.predict_proba(X_submit)
 
     clf_rf, rel_rf_acc = tree(X, y)
     prediction_rf_submit = clf_rf.predict_proba(X_submit)
-
+    #
     clf_gb, rel_gb_acc = gboost(X,y)
     prediction_gb_submit = clf_gb.predict_proba(X_submit)
-
-    clf_lgb = lgboost(X, y)
-    prediction_lgb_submit = clf_lgb.predict_proba(X_submit)
+    #
+    # clf_lgb = lgboost(X, y)
+    # prediction_lgb_submit = clf_lgb.predict_proba(X_submit)
 
     # clf_ab = adaboost(X,y)
     # prediction_ab_submit = clf_ab.predict_proba(X_submit)
@@ -63,11 +68,9 @@ def main():
     # clf_nn = nn(X,y)
     # prediction_nn_submit = clf_nn.predict_proba(X_submit)
 
-    # prediction_submit = (prediction_rf_submit*rel_rf_acc)*0.6 +\
-    #                     (prediction_gb_submit*rel_gb_acc)*0.4
-    prediction_submit = prediction_rf_submit * 0.3 +\
-                        prediction_gb_submit * 0.5 +\
-                        prediction_lgb_submit * 0.2
+    prediction_submit = prediction_rf_submit * 0.3 + \
+                        prediction_gb_submit * 0.7
+
     prediction_submit = np.array([np.argmax(poss == max(poss)) for poss in prediction_submit])
 
     result = pd.DataFrame(np.stack((ids, prediction_submit), axis=-1).astype(int),columns=["ID","y_pred"])
@@ -75,3 +78,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
