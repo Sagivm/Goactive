@@ -6,17 +6,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
 from sklearn.feature_selection import SelectKBest,chi2
-from sklearn.model_selection import StratifiedKFold,KFold, RepeatedStratifiedKFold
+from sklearn.model_selection import StratifiedKFold,KFold, RepeatedStratifiedKFold,RepeatedKFold
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import confusion_matrix
-from matplotlib import pyplot
 
 from operator import itemgetter,getitem
 
 
 def tree(X:np.ndarray, y:np.ndarray):
     print("Start tree")
-    kf = RepeatedStratifiedKFold(n_splits=5, n_repeats=4)
+    kf = RepeatedStratifiedKFold(n_splits=5, n_repeats=2)
     models = list()
     scores = list()
     for i, (train_index, test_index) in enumerate(kf.split(X, y)):

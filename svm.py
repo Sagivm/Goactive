@@ -9,7 +9,6 @@ from sklearn.feature_selection import SelectKBest,chi2
 from sklearn.model_selection import StratifiedKFold,KFold, RepeatedStratifiedKFold
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import confusion_matrix
-from matplotlib import pyplot
 
 from operator import itemgetter,getitem
 

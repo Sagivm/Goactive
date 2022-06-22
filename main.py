@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import tensorflow
 from ReadData import *
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
@@ -7,7 +8,7 @@ from trees import tree
 from knn import knn
 from nn import nn
 from svm import svm
-from gradientboost import gboost,lgboost
+from gradientboost import gboost
 from Adaboost import adaboost
 from sklearn.decomposition import PCA,TruncatedSVD
 from sklearn.neighbors import KNeighborsClassifier
@@ -65,12 +66,17 @@ def main():
     # clf_ab = adaboost(X,y)
     # prediction_ab_submit = clf_ab.predict_proba(X_submit)
 
-    # clf_nn = nn(X,y)
-    # prediction_nn_submit = clf_nn.predict_proba(X_submit)
+    clf_nn = nn(X,y)
+    prediction_nn_submit = clf_nn.predict(X_submit)
 
-    prediction_submit = prediction_rf_submit * 0.3 + \
-                        prediction_gb_submit * 0.7
+    # prediction_submit = prediction_rf_submit * 0.3 + \
+    #                     prediction_gb_submit * 0.7
+    #
+    best_pred = pd.read_csv("best_pred.csv")
+    best_pred = best_pred.to_numpy()[:, 1]
+    best_pred = tensorflow.keras.utils.to_categorical(best_pred)
 
+    prediction_submit = 0.3 * best_pred + 0.35*prediction_rf_submit +0.35* prediction_gb_submit
     prediction_submit = np.array([np.argmax(poss == max(poss)) for poss in prediction_submit])
 
     result = pd.DataFrame(np.stack((ids, prediction_submit), axis=-1).astype(int),columns=["ID","y_pred"])
