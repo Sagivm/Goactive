@@ -11,9 +11,9 @@ from operator import itemgetter
 
 
 
-def gboost(X:np.ndarray, y:np.ndarray):
+def gboost(X:np.ndarray, y:np.ndarray,n:int):
     print("Start gboost")
-    kf = RepeatedStratifiedKFold(n_splits=5, n_repeats=2)
+    kf = RepeatedStratifiedKFold(n_splits=10, n_repeats=n)
     models = list()
     scores = list()
     for i, (train_index, test_index) in enumerate(kf.split(X, y)):

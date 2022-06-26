@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import tensorflow
+
+import random_generator
 from ReadData import *
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
@@ -13,20 +15,13 @@ from Adaboost import adaboost
 from sklearn.decomposition import PCA,TruncatedSVD
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
-
-def find_best_samples(X_train, y_train, X_submit):
-    clf = KNeighborsClassifier(n_neighbors=1)
-    clf.fit(X_train, y_train)
-    good_samples = clf.kneighbors(X_submit, 1)
-    good_samples = np.where(good_samples[0] < 60 , good_samples[1],None)
-    #return  np.array(list(filter(lambda sample: sample,good_samples)))
-    return good_samples
+from sklearn.preprocessing import MinMaxScaler
 
 
 
 def NormalizeData(data):
-    return (data - np.min(data)) / (np.max(data) - np.min(data))
-
+    scaler = MinMaxScaler()
+    return scaler.fit_transform(data)
 
 def main():
 
@@ -37,50 +32,55 @@ def main():
     print("Finished reading train data")
     #
     # X transformation
+
+    ##
+    print("Add mutated data")
+
+    ##
     print("X transformation")
+
     X_full = np.vstack((X, X_submit))
-    X_full = NormalizeData(X_full)
+    X_full= NormalizeData(X_full)
     X_full = X_full + 1
     columns = X.shape[1]
 
     for i in range(columns):
         np.append(X_full,np.log(X_full[:,i]))
-
     X = X_full[:15000,:]
     X_submit = X_full[15000:, :]
     print("X transformation finished")
+    X_mutations,y_mutations,length = random_generator.combinator(X,
+                                                                 X_submit,
+                                                                 y, alpha=0.4)
+    X = np.row_stack((X,X_mutations))
+    y = np.hstack((y,y_mutations))
 
-    #
+    n_repeats = 3
     # clf_svm, rel_svm_acc = svm(X, y)
     # prediction_svm_submit = clf_svm.predict_proba(X_submit)
+    # clf_nn = nn(X, y)
+    # prediction_nn_submit = clf_nn.predict(X_submit)
 
-    clf_rf, rel_rf_acc = tree(X, y)
+    clf_rf, rel_rf_acc = tree(X, y, n_repeats)
     prediction_rf_submit = clf_rf.predict_proba(X_submit)
     #
-    clf_gb, rel_gb_acc = gboost(X,y)
+    clf_gb, rel_gb_acc = gboost(X,y,n_repeats)
     prediction_gb_submit = clf_gb.predict_proba(X_submit)
-    #
-    # clf_lgb = lgboost(X, y)
-    # prediction_lgb_submit = clf_lgb.predict_proba(X_submit)
-
-    # clf_ab = adaboost(X,y)
-    # prediction_ab_submit = clf_ab.predict_proba(X_submit)
-
-    clf_nn = nn(X,y)
-    prediction_nn_submit = clf_nn.predict(X_submit)
-
-    # prediction_submit = prediction_rf_submit * 0.3 + \
-    #                     prediction_gb_submit * 0.7
-    #
+    # #
+    # clf_nn = nn(X,y)
+    # prediction_nn_submit = clf_nn.predict(X_submit)
     best_pred = pd.read_csv("best_pred.csv")
     best_pred = best_pred.to_numpy()[:, 1]
     best_pred = tensorflow.keras.utils.to_categorical(best_pred)
 
-    prediction_submit = 0.3 * best_pred + 0.35*prediction_rf_submit +0.35* prediction_gb_submit
-    prediction_submit = np.array([np.argmax(poss == max(poss)) for poss in prediction_submit])
+    prediction_submit = 0.30 * best_pred + 0.35*prediction_rf_submit +0.35* prediction_gb_submit
+    #prediction_submit = 0.4 * best_pred + 0.6 * prediction_rf_submit
+    prediction_n_submit = np.array([np.argmax(poss == max(poss)) for poss in prediction_submit])
 
-    result = pd.DataFrame(np.stack((ids, prediction_submit), axis=-1).astype(int),columns=["ID","y_pred"])
-    pd.DataFrame.to_csv(result,"pred.csv",columns=result.columns,index=False)
+    result = pd.DataFrame(np.stack((ids, prediction_n_submit), axis=-1).astype(int),columns=["ID","y_pred"])
+    pd.DataFrame.to_csv(result,f"pred--30.csv",columns=result.columns,index=False)
+
+
 
 if __name__ == '__main__':
     main()

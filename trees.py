@@ -13,9 +13,9 @@ from sklearn.metrics import confusion_matrix
 from operator import itemgetter,getitem
 
 
-def tree(X:np.ndarray, y:np.ndarray):
+def tree(X:np.ndarray, y:np.ndarray,n:int):
     print("Start tree")
-    kf = RepeatedStratifiedKFold(n_splits=5, n_repeats=2)
+    kf = RepeatedStratifiedKFold(n_splits=10, n_repeats=n)
     models = list()
     scores = list()
     for i, (train_index, test_index) in enumerate(kf.split(X, y)):

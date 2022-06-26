@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d70ed792-858a-4fe2-bbbc-8ce6635861a9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Ex2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Ex2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReadData.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReadData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Runs.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Runs.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_pred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/best_pred.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradientboost.py" beforeDir="false" afterPath="$PROJECT_DIR$/gradientboost.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/nn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/pred.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/random_best_pred.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pred.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/random_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/random_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/random_pred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/random_pred.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svm.py" beforeDir="false" afterPath="$PROJECT_DIR$/svm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trees.py" beforeDir="false" afterPath="$PROJECT_DIR$/trees.py" afterDir="false" />
     </list>
@@ -167,8 +166,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.random_generator" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.random_generator" />
         <item itemvalue="Python.ReadData" />
       </list>
     </recent_temporary>
@@ -192,7 +191,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654846802384</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2.4">
+      <created>1655876316173</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1655876316173</updated>
+    </task>
+    <task id="LOCAL-00003" summary="2.4">
+      <created>1655876328935</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655876328935</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -247,7 +260,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add random generator and svm try" />
-    <option name="LAST_COMMIT_MESSAGE" value="add random generator and svm try" />
+    <MESSAGE value="2.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -268,49 +282,14 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/random_generator.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>78</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>79</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>81</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/gradientboost.py</url>
-          <line>28</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/gradientboost.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/gradientboost.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/gradientboost.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="77" />
+          <line>57</line>
+          <option name="timeStamp" value="88" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -323,12 +302,9 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="0.3 * best_pred + 0.7*prediction_rf_submit" language="Python" />
-        <watch expression="pd.read_csv(&quot;best_pred.csv&quot;).to_numpy()[:,1]" language="Python" />
-        <watch expression="accuracy_score(prediction_submit,pd.read_csv(&quot;best_pred.csv&quot;).to_numpy()[:,1])" language="Python" />
-        <watch expression="prediction_rf_submit" language="Python" />
-        <watch expression="prediction_submit" language="Python" />
-        <watch expression="best_pred" language="Python" />
+        <watch expression="np.array(mutations)" language="Python" />
+        <watch expression="np.row_stack((X,X_mutations))" language="Python" />
+        <watch expression="np.hstack((y,y_mutations))" language="Python" />
       </configuration>
     </watches-manager>
   </component>

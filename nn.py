@@ -25,13 +25,14 @@ def nn(X:np.ndarray, y:np.ndarray):
     clf.add(Input(X.shape[1]))
     clf.add(Dense(512,activation='relu'))
     clf.add(Dense(256, activation='relu'))
+    clf.add(Dense(256, activation='relu'))
     clf.add(Dense(64, activation='relu'))
     clf.add(Dense(3,activation='softmax'))
-    sgd = SGD(lr=0.1)
+    sgd = SGD(lr=0.1,)
     clf.compile(loss='categorical_crossentropy',
                   optimizer='adam',
                   metrics=['accuracy'])
-    clf.fit(X_train, y_train, epochs=50, batch_size=32)
+    clf.fit(X_train, y_train, epochs=128, batch_size=32)
     prediction = clf.predict(X_test)
     prediction = np.array([np.argmax(poss == max(poss)) for poss in prediction])
 
