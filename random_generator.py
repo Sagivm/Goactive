@@ -24,42 +24,13 @@ def combinator(X,X_submit,y_train,alpha):
     mutations = np.array(X_mutations)
     return mutations,y_mutations,mutations.shape[0]
 
-
-def compare(path1,path2,alpha=0.2):
-    data1 = pd.read_csv(path1)
-    data1 = data1.to_numpy()
-
-    data2 = pd.read_csv(path2)
-    data2 = data2.to_numpy()
-
-    combined_data = list()
-    for i in range(data1.shape[0]):
-        if (data1[i,1] != data2[i,1]):
-            if(data1[i,1]==1 and np.random.random()<alpha):
-                new_val= data2[i,1]
-            else:
-                new_val = data1[i, 1]
-        else:
-            new_val=data1[i,1]
-        combined_data.append([data1[i,0],new_val])
-
-    combined_data = np.row_stack(combined_data)
-    print("Base " +str(accuracy_score(data1[:,1],data2[:,1])))
-    print("Changed " + str(accuracy_score(data1[:, 1], combined_data[:, 1])))
-    result = pd.DataFrame(combined_data.astype(int), columns=["ID", "y_pred"])
-    pd.DataFrame.to_csv(result, "com_pred.csv", columns=result.columns, index=False)
-
-
 def scramble_data(path, alpha=0.02):
     data = pd.read_csv(path)
     data = data.to_numpy()
     randomize_data = list()
     for sample in data:
-        if sample[1]==1:
-            if np.random.random() < alpha:
-                new_val = 2
-            else:
-                new_val = sample[1]
+        if np.random.random() < alpha:
+                new_val = np.random.random(3)
         else:
             new_val = sample[1]
         rand_sample = [sample[0],new_val]
@@ -70,6 +41,3 @@ def scramble_data(path, alpha=0.02):
     pd.DataFrame.to_csv(result, "random_pred.csv", columns=result.columns, index=False)
     return None
 
-
-# scramble_data("best_pred.csv");
-# compare("pred35.csv","best_pred.csv")

@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d70ed792-858a-4fe2-bbbc-8ce6635861a9" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/auc_graph.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adaboost.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Runs.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Runs.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/best_pred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/best_pred.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradientboost.py" beforeDir="false" afterPath="$PROJECT_DIR$/gradientboost.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/knn.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/nn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pred.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nn.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/random_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/random_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/random_pred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/random_pred.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svm.py" beforeDir="false" afterPath="$PROJECT_DIR$/svm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/random_pred.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svm.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trees.py" beforeDir="false" afterPath="$PROJECT_DIR$/trees.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -282,14 +283,24 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/random_generator.py</url>
-          <line>46</line>
-          <option name="timeStamp" value="78" />
+          <url>file://$USER_HOME$/anaconda3/envs/Goactive/Lib/site-packages/shap/plots/_beeswarm.py</url>
+          <line>492</line>
+          <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="88" />
+          <line>74</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -302,9 +313,11 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="np.array(mutations)" language="Python" />
-        <watch expression="np.row_stack((X,X_mutations))" language="Python" />
-        <watch expression="np.hstack((y,y_mutations))" language="Python" />
+        <watch expression="shap_values" language="Python" />
+        <watch expression="(shap_values[0].shape[1] if multi_class else shap_values.shape[1])" language="Python" />
+        <watch expression="shap_values[0]" language="Python" />
+        <watch expression="sample.reshape(1,-1)" language="Python" />
+        <watch expression="shap.dependence_plot(1137, shap_values, X)" language="Python" />
       </configuration>
     </watches-manager>
   </component>
